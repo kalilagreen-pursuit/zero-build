@@ -1,0 +1,26 @@
+app = "curtain-call"
+primary_region = "ord"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "3000"
+  ZERO_AGENT = "production"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 512
+
+# Required secrets (set with `fly secrets set ...`):
+#   ZERO_PRIVATE_KEY     hot wallet key — pre-fund and cap spend
+#   ANTHROPIC_API_KEY    Claude
+#   OPENAI_API_KEY       OpenAI embeddings fallback
