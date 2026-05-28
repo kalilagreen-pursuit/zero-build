@@ -122,7 +122,7 @@ export async function POST(req: NextRequest) {
 
         const [moodboard, ranked] = await Promise.all([
           runZeroMoodboardLoop(scene, send),
-          rankConceptualizers(scene),
+          rankConceptualizers(scene, (e) => send("log", e)),
         ]);
 
         send("moodboard", { url: moodboard });
