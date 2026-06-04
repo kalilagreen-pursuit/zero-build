@@ -3,7 +3,7 @@
 AI casting agent for playwrights and visual conceptualizers. Paste a scene, get a Zero-discovered moodboard, three matched designers, and a drafted commission pitch in ~30 seconds.
 
 ## Stack
-- Next.js 15 (App Router)
+- Next.js 16 (App Router, Turbopack, Tailwind v4, flat ESLint config)
 - Anthropic Messages API (Claude Sonnet 4.5) for pitch + match reasoning
 - Zero CLI shelled out from `/api/match` for moodboard image generation **and** text embeddings (via `zero search` → `zero get` → `zero fetch --max-pay 0.01`)
 - OpenAI `text-embedding-3-small` as a fallback when the Zero CLI isn't available

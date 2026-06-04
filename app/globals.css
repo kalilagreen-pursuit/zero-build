@@ -1,11 +1,33 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-html, body { background: #0e0a0d; color: #f4ead5; }
+@theme {
+  --color-curtain-bg: #0e0a0d;
+  --color-curtain-panel: #1a1216;
+  --color-curtain-ink: #f4ead5;
+  --color-curtain-accent: #c9a96e;
+  --color-curtain-velvet: #5b1a1f;
 
-.log-line { @apply font-mono text-xs leading-relaxed; }
-.log-tool { @apply text-curtain-accent; }
-.log-think { @apply text-curtain-ink/70 italic; }
-.log-pay { @apply text-emerald-400; }
-.log-err { @apply text-red-400; }
+  --font-serif: Georgia, ui-serif, serif;
+}
+
+html,
+body {
+  background: #0e0a0d;
+  color: #f4ead5;
+}
+
+.log-line {
+  @apply font-mono text-xs leading-relaxed;
+}
+.log-tool {
+  @apply text-curtain-accent;
+}
+.log-think {
+  @apply text-curtain-ink/70 italic;
+}
+.log-pay {
+  @apply text-emerald-400;
+}
+.log-err {
+  @apply text-red-400;
+}
